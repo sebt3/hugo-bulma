@@ -4,10 +4,10 @@
 
 # The URL of the site
 # Hostname (and path) to the root, e.g. https://bep.is/
-baseURL = "http://localhost:1313/"
+baseURL = "/"
 
 # The name of theme in `/themes/`.
-theme = "hugo-bulma"
+theme = "bulma"
 
 # Google Analytics tracking ID.
 googleAnalytics = ""
@@ -16,22 +16,22 @@ googleAnalytics = ""
 disableHugoGeneratorInject =  true
 
 # Default language to use.
-defaultContentLanguage = "en"
+defaultContentLanguage = "fr"
 
-# Render the default content language in subdir, e.g. /en/. 
-defaultContentLanguageInSubdir = true
+# Render the default content language in subdir, e.g. /en/.
+defaultContentLanguageInSubdir = false
 
 # Set `true` for Chinese/Japanese/Korean languages.
 hasCJKLanguage = false
 
 # Workaround for https://github.com/gohugoio/hugo/issues/5687.
-removePathAccents = true                
+removePathAccents = true
 
 # Enable Emoji emoticons support for page content.
 enableEmoji = true
 
 # The number of elements per page in pagination.
-paginate = 10
+paginate = 25
 
 # Listing summary length in words.
 summaryLength = 70

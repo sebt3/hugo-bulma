@@ -14,7 +14,7 @@
 {{ $isTagsEnabled := $page.Params.widgets.children.isTagsEnabled | default $page.Site.Params.widgets.children.isTagsEnabled | default false }}
 
 {{ if $isEnabled }}
-    {{ $pages := ($page.Paginator $pageSize).Pages }}  
+    {{ $pages := ($page.Paginator $pageSize).Pages }}
 
     {{ if or (eq $style 1) (eq $style 2) }}
         <section class="section widget-children">
@@ -42,7 +42,7 @@
                                             </div>
                                         </div>
                                     {{ end }}
-                                {{ end }} 
+                                {{ end }}
                             </div>
                         {{ end }}
                     </header>

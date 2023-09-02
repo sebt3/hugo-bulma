@@ -54,11 +54,11 @@
                             {{ $right = 5}}
                         {{ end }}
                         {{ if gt $right $paginator.TotalPages }}
-                            {{ $left = sub $paginator.TotalPages 4 }} 
+                            {{ $left = sub $paginator.TotalPages 4 }}
                             {{ $right = add $paginator.TotalPages 1 }}
-                        {{ end }}    
+                        {{ end }}
                     {{ end }}
-                    
+
                     {{ $shouldEllipse := false }}
                     {{ $ellipsed := false }}
                     {{ range $paginator.Pagers }}

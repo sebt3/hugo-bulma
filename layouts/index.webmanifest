@@ -1,6 +1,6 @@
 {{ $page := . }}
 {{ $title := $page.Site.Title }}
-{{ if eq $title "" }} 
+{{ if eq $title "" }}
     {{ $message := printf "index.webmanifest: missing `title` value of site" }}
     {{ partial "functions/error.html" (dict "context" $page "message" $message) }}
 {{ end }}
@@ -34,5 +34,5 @@
             "src": "{{ $icon512Path }}",
             "sizes": "512x512",
             "type": "image/png"
-     }] 
+     }]
 }

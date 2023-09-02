@@ -6,7 +6,7 @@ isQuirksMode = true     # set value to true will throw error as warning when bui
 ########## Design
 
 [design]
-    isRadiusless = true     # disable radius global if set to `true`
+    isRadiusless = false     # disable radius global if set to `true`
 
     # https://clrs.cc colors
     [design.colors]
@@ -76,12 +76,12 @@ isQuirksMode = true     # set value to true will throw error as warning when bui
 
     [widgets.header]
         isEnabled           = true
-        isFixedTop          = true
-        isSpaced            = false     # enable paddings as 1rem (top and bottom) and 2rem (left and right)
-        isTransparent       = true      # enable navbar transparent
+        isFixedTop          = false
+        isSpaced            = true      # enable paddings as 1rem (top and bottom) and 2rem (left and right)
+        isTransparent       = false     # enable navbar transparent
         hasShadow           = true      # enable navbar shadow (botoom line)
         hasTextWeightBold   = true      # enable text bold
-        backgroundColor     = ""        # available values: `primary`,`link`,`info`,`success`,`warning`,`danger`,`black`,`dark`,`light`,`white`
+        backgroundColor     = "dark"    # available values: `primary`,`link`,`info`,`success`,`warning`,`danger`,`black`,`dark`,`light`,`white`
 
         [widgets.header.logo]
             isEnabled   =  true
@@ -121,7 +121,7 @@ isQuirksMode = true     # set value to true will throw error as warning when bui
     [widgets.content]
         isEnabled           = true
         isBannerEnabled     = false
-        isCategoriesEnabled = true
+        isCategoriesEnabled =  true
         isTagsEnabled       = true
 
     [widgets.tableOfContents]
@@ -238,6 +238,6 @@ isQuirksMode = true     # set value to true will throw error as warning when bui
             [templates.error404.rows.1.columns.full]
                 widgets = ["error404", "recently"]
     [templates.index.xml]
-        timeFormat = "2006-01-02 15:04:05 +0200"
+        timeFormat = "2006-01-02 15:04:05 +0800"
 
 ####################

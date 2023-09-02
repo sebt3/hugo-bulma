@@ -48,7 +48,7 @@ other = "標籤"
 
 
 [template_error_404]
-other = "抱歉，找不到該頁面" 
+other = "抱歉，找不到該頁面"
 
 [template_error_404_subtitle]
 other = "您正在尋找的頁面可能已被刪除，或它的名稱被更改或暫時不可用。"

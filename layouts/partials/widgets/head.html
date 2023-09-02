@@ -71,14 +71,14 @@
     {{ if not $isEnabled }}
         {{ range $switch := $extension.switches }}
             {{ if and (not $isEnabled) ($page.Param $switch) }}
-                {{ $isEnabled = true }} 
+                {{ $isEnabled = true }}
             {{ end }}
         {{ end }}
     {{ end }}
     {{ if $isEnabled }}
         {{ range $key, $style := $extension.styles }}
             {{ $path := printf "vendors/%s/%s" (lower $name) (path.Base $style.url) }}
-            {{ $fullPath := printf "static/%s" $path }} 
+            {{ $fullPath := printf "static/%s" $path }}
             {{ if fileExists $fullPath }}
                 <link rel="stylesheet" href="{{ $path | relURL }}">
             {{ else }}
@@ -87,7 +87,7 @@
         {{ end }}
         {{ range $key, $script := $extension.scripts }}
             {{ $path := printf "vendors/%s/%s" (lower $name) (path.Base $script.url) }}
-            {{ $fullPath := printf "static/%s" $path }} 
+            {{ $fullPath := printf "static/%s" $path }}
             {{ if fileExists $fullPath }}
                 <script defer src="{{ $path | relURL }}"></script>
             {{ else }}
@@ -124,7 +124,7 @@
 
 {{ range $key, $style := $customStyles }}
     {{ if $style.path }} {{/* local */}}
-        {{ $fullPath := printf "assets/%s" $style.path }} 
+        {{ $fullPath := printf "assets/%s" $style.path }}
         {{ if not (fileExists $fullPath) }}
             {{ $message := printf "partials/head: file not found (path=%q) at config [params.widgets.head.styles.%s]" $style.path $key }}
             {{ partial "functions/error.html" (dict "context" $page "message" $message) }}
@@ -166,15 +166,15 @@
 {{ $localJSTarget := "scripts/all.js" }}
 
 <!-- prepared for more theme scripts future -->
-{{ $themeScripts := slice "scripts/main.jquery.js" }}
+{{ $themeScripts := slice "scripts/main.ts" }}
 
 {{ range $path := $themeScripts }}
-    {{ $js := resources.Get $path  | resources.ExecuteAsTemplate $path $page }}
+    {{ $js := resources.Get $path  | js.Build }}
     {{ $localJS = $localJS | append $js }}
 {{ end }}
 {{ range $key, $script := $customScripts }}
     {{ if $script.path }}
-        {{ $fullPath := printf "assets/%s" $script.path }} 
+        {{ $fullPath := printf "assets/%s" $script.path }}
         {{ if not (fileExists $fullPath) }}
             {{ $message := printf "partials/head: file not found (path=%q) at config [params.widgets.head.scripts.%s]" $script.path $key }}
             {{ partial "functions/error.html" (dict "context" $page "message" $message) }}

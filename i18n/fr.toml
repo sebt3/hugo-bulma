@@ -5,53 +5,53 @@ other = "Navigation"
 other = "Menu"
 
 [widget_breadcrumb]
-other = "Breadcrumbs"
+other = "fil d'Ariane"
 
 [widget_breadcrumb_home]
-other = "Home"
+other = "Accueil"
 
 [widget_pagination]
 other = "Pagination"
 
 [widget_pagination_previous]
-other = "Previous"
+other = "Précédent"
 
 [widget_pagination_next]
-other = "Next"
+other = "Suivant"
 
 [widget_pagination_go_to_page]
-other = "Go To Page {{ .PageNumber }}"
+other = "Aller à la page {{ .PageNumber }}"
 
 [widget_pagination_current]
 other = "Page {{ .PageNumber }}"
 
 [widget_footer_back_to_top]
-other = "Back To Top"
+other = "Retour au début"
 
 [widget_table_of_contents]
-other = "On This Page"
+other = "Sur cette page"
 
 [widget_recently]
-other = "Recently"
+other = "Récemment"
 
 [widget_related]
-other = "See Also"
+other = "Voir également"
 
 [widget_children_read_more]
-other = "Read More"
+other = "En savoir plus"
 
 [widget_all_categories]
-other = "Categories"
+other = "Catégories"
 
 [widget_all_tags]
-other = "Tags"
+other = "Mots clés"
 
 
 [template_error_404]
-other = "Oops! Page Not Found"
+other = "Oops! Page non trouvée"
 
 [template_error_404_subtitle]
-other = "The page you are looking for might have been removed had it's name changed or is temporarily unavailable."
+other = "La page que vous recherchez a peut-être été supprimée si son nom a changé ou est temporairement indisponible."
 
 [template_error_404_go_to_homepage]
-other = "Go To Homepage"
+other = "Aller à la page d'accueil"

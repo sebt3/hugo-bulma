@@ -1,3 +1,53 @@
++++
+
+draft       = false
+date        = "2020-06-16"
+
+hasCJKLanguage = false
+
+author      = "Wayne Ho"
+keywords    = ["configuration", "config", "documentation", "docs"]
+description = ""
+title       = "Configuration of Theme"
+linkTitle   = "Configuration"
+
+banner      = "/images/configuration.jpg"
+
+categories  = ["Documentation"]
+tags        = ["Documentation", "Configuration", "Config"]
+
+images      = ["/images/configuration.jpg"]
+
+[menus.quicklinks]
+    weight = 1
+    parent = "documentation"
+
+[widgets.content]
+    [widgets.content.banner]
+        isEnabled = false
+
+[widgets.tableOfContents]
+     isEnabled   = false
+
+[widgets.related]
+    isEnabled               = true
+    sections                = ["documentation"]
+    numberOfRecords         = 4
+    isVertical              = true
+    numberOfRecordsPerRow   = 4
+
+[widgets.recently]
+    isEnabled               = false
+
++++
+
+# Configuration
+
+---
+
+How to configure your Hugo-Bulma site. Check the follow example configuration settings.
+
+```toml
 ####################
 
 isQuirksMode = true     # set value to true will throw error as warning when building site, or as error
@@ -40,8 +90,8 @@ isQuirksMode = true     # set value to true will throw error as warning when bui
         post            = "<span class=\"icon\"><i class=\"fas fa-external-link-alt\"></i></span>"
 
     [plugins.googleAnalytics]
-        isEnabled   = false
-        trackingID  = ""
+        isEnabled   = true
+        trackingID  = "UA-169816164-1"
         anonymizeIP = false
 
     [plugins.googleTagManager]
@@ -49,11 +99,11 @@ isQuirksMode = true     # set value to true will throw error as warning when bui
         containerID = ""
 
     [plugins.googleAdSense]
-        isEnabled   = false
+        isEnabled   = true
         clientID    = ""
 
     [plugins.sharethis]
-        isEnabled   = false
+        isEnabled   = true
         propertyID  = ""
 
 ########## Widgets
@@ -121,12 +171,12 @@ isQuirksMode = true     # set value to true will throw error as warning when bui
     [widgets.content]
         isEnabled           = true
         isBannerEnabled     = false
-        isCategoriesEnabled = true
+        isCategoriesEnabled =  true
         isTagsEnabled       = true
 
     [widgets.tableOfContents]
         isEnabled   = true
-        isSticky    = false
+        isSticky    = true
         top         = "3rem"    # used for sticky, unit must be rem, will calcuate "top" in main.scss by value + design.navbar.height
 
     [widgets.categories]
@@ -238,6 +288,7 @@ isQuirksMode = true     # set value to true will throw error as warning when bui
             [templates.error404.rows.1.columns.full]
                 widgets = ["error404", "recently"]
     [templates.index.xml]
-        timeFormat = "2006-01-02 15:04:05 +0200"
+        timeFormat = "2006-01-02 15:04:05 +0800"
 
 ####################
+```

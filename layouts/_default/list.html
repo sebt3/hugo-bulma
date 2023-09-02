@@ -22,7 +22,7 @@
                         {{ end }}
                         <div class="{{ $class }}">
                         {{ range $widget := $column.widgets }}
-                            {{ $path := printf "widgets/%s.html" $widget}} 
+                            {{ $path := printf "widgets/%s.html" $widget}}
                             {{ $fullPath := printf "partials/%s" $path }}
                             {{ if templates.Exists $fullPath }}
                                 {{ partial $path $page }}
