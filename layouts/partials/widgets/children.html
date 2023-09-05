@@ -54,7 +54,7 @@
                                     <img src="{{ $item.Params.banner | relURL }}" alt="{{ $item.Title | default $item.LinkTitle }}">
                                 </a>
                                 <div class="is-clearfix">
-                                    <p class="pt-2">{{ $item.Params.summary | default $item.Summary }}</p>
+                                    <p class="pt-2">{{ $item.Params.summary | default $item.Params.description | default $item.Summary }}</p>
                                     <div class="is-pulled-right pt-4">
                                         <a class="button is-link is-outlined" title="{{ i18n "widget_children_read_more" }}" href="{{ $item.Params.externalLink | default $item.RelPermalink }}">{{ i18n "widget_children_read_more" }}</a>
                                     </div>
@@ -67,7 +67,7 @@
                                         </a>
                                     </div>
                                     <div class="column is-clearfix">
-                                        <p>{{ $item.Params.summary | default $item.Summary }}</p>
+                                        <p>{{ $item.Params.summary | default $item.Params.description | default $item.Summary }}</p>
                                         <div class="is-pulled-right pt-4">
                                             <a class="button is-link is-outlined" title="{{ i18n "widget_children_read_more" }}" href="{{ $item.Params.externalLink | default $item.RelPermalink }}">{{ i18n "widget_children_read_more" }}</a>
                                         </div>
@@ -76,7 +76,7 @@
                             {{ end }}
                         {{ else }}
                             <div class="is-clearfix">
-                                <p>{{ $item.Params.summary | default $item.Summary }}</p>
+                                <p>{{ $item.Params.summary | default $item.Params.description | default $item.Summary }}</p>
                                 <div class="is-pulled-right">
                                     <a class="button is-link is-outlined" title="{{ i18n "widget_children_read_more" }}" href="{{ $item.Params.externalLink | default $item.RelPermalink }}">{{ i18n "widget_children_read_more" }}</a>
                                 </div>
@@ -115,7 +115,7 @@
                                     <h3 class="title is-6 pt-2"><a href="{{ $item.Params.externalLink | default $item.RelPermalink }}" title="{{ $item.Title | default $item.LinkTitle }}">{{ $item.LinkTitle }}</a></h3></header>
                                 {{ else }}
                                     <h3 class="title is-6"><a href="{{ $item.Params.externalLink | default $item.RelPermalink }}" title="{{ $item.Title | default $item.LinkTitle }}">{{ $item.LinkTitle }}</a></h3>
-                                    <p class="subtitle is-7">{{ $item.Params.summary | default $item.Summary }}</p>
+                                    <p class="subtitle is-7">{{ $item.Params.summary | default $item.Params.description | default $item.Summary }}</p>
                                 {{ end }}
 
                                 {{ if or (or (or $isDateEnabled $isAuthorEnabled) $isCategoriesEnabled) $isTagsEnabled }}

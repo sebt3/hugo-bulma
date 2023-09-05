@@ -40,6 +40,6 @@
     {{ $message := printf `shortcodes/title: missing inner at %s` $shortcode.Position }}
     {{ partial "functions/error.html" (dict "context" $shortcode "message" $message) }}
 {{ else }}
-    {{ $html := printf `<h%d class="%s">%s</h%d>` $level $class $shortcode.Inner $level }}
+    {{ $html := printf `<h%d class="%s">%s</h%d>` $level $class ($shortcode.Inner | markdownify) $level }}
     {{ $html | safeHTML }}
 {{ end }}

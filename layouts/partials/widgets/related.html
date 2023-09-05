@@ -31,7 +31,7 @@
                                     <h3 class="title is-6 pt-2"><a href="{{ $item.Params.externalLink | default $item.RelPermalink }}" title="{{ $item.Title | default $item.LinkTitle }}">{{ $item.LinkTitle }}</a></h3></header>
                                 {{ else }}
                                     <h3 class="title is-6"><a href="{{ $item.Params.externalLink | default $item.RelPermalink }}" title="{{ $item.Title | default $item.LinkTitle }}">{{ $item.LinkTitle }}</a></h3>
-                                    <p class="subtitle is-7">{{ $item.Params.summary | default $item.Summary }}</p>
+                                    <p class="subtitle is-7">{{ $item.Params.summary | default $item.Params.description | default $item.Summary }}</p>
                                 {{ end }}
                             </article>
                         {{ end }}
@@ -51,7 +51,7 @@
                                         <h3 class="title is-6 pt-2"><a href="{{ $item.Params.externalLink | default $item.RelPermalink }}" title="{{ $item.Title | default $item.LinkTitle }}">{{ $item.LinkTitle }}</a></h3></header>
                                     {{ else }}
                                         <h3 class="title is-6"><a href="{{ $item.Params.externalLink | default $item.RelPermalink }}" title="{{ $item.Title | default $item.LinkTitle }}">{{ $item.LinkTitle }}</a></h3>
-                                        <p class="subtitle is-7">{{ $item.Params.summary | default $item.Summary }}</p>
+                                        <p class="subtitle is-7">{{ $item.Params.summary | default $item.Params.description | default $item.Summary }}</p>
                                     {{ end }}
                                 </article>
                             </div>
