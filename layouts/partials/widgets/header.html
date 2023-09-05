@@ -77,7 +77,7 @@
                     {{ $baseURL := urls.Parse $page.Site.Params.baseURL }}
                     {{ range $page.Site.Menus.navbar }}
                         {{ $item := . }}
-                        {{ $isActive := $page.HasMenuCurrent "navbar" $item }}
+                        {{ $isActive := or ($page.IsMenuCurrent "navbar" $item) ($page.HasMenuCurrent "navbar" $item) }}
                         {{ $currentURL := urls.Parse $item.URL }}
                         {{ $isExternal := false }}
                         {{ if ne $currentURL.Host $baseURL.Host }}

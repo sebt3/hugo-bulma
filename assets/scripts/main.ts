@@ -1,11 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-    const $scrollDelay = 500;
-
 /**********/
 /* Navbar */
 /**********/
-
     const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
     $navbarBurgers.forEach( el => {
     el.addEventListener('click', () => {
@@ -15,30 +11,25 @@ document.addEventListener('DOMContentLoaded', () => {
         $target?.classList.toggle('is-active');
     });
     });
-
-
 /****************/
 /* Notification */
 /****************/
-
     (document.querySelectorAll('.notification .delete') || []).forEach(($delete) => {
-        const $notification = $delete.parentNode;
+        const $notification = $delete.parentNode as Node;
 
         $delete.addEventListener('click', () => {
-        $notification.parentNode.removeChild($notification);
+        $notification.parentNode?.removeChild($notification);
         });
     });
-
 /*************/
 /* BackToTop */
 /*************/
-
     window.addEventListener("scroll", (event) => {
         if (window.scrollY) {
             (document.querySelectorAll(".back-to-top") || []).forEach((elSrc) => {
                 if (elSrc.classList.contains('is-hidden')){
-                    el = elSrc.cloneNode(true);
-                    elSrc.parentNode.replaceChild(el, elSrc);
+                    var el = elSrc.cloneNode(true) as HTMLElement;
+                    elSrc.parentNode?.replaceChild(el, elSrc);
                     el.classList.remove("is-hidden");
                     el.classList.remove("fadeout");
                     el.classList.add("fadein");
@@ -50,8 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             (document.querySelectorAll(".back-to-top") || []).forEach((elSrc) => {
                 if (!elSrc.classList.contains('is-hidden')) {
-                    el = elSrc.cloneNode(true);
-                    elSrc.parentNode.replaceChild(el, elSrc);
+                    var el = elSrc.cloneNode(true)  as HTMLElement;
+                    elSrc.parentNode?.replaceChild(el, elSrc);
                     el.classList.remove("fadein");
                     el.addEventListener('animationend', () => {
                         el.classList.add("is-hidden");
@@ -61,14 +52,12 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     });
-
-
 /**********************************/
 /* Fix Anchors + Navbar fixed top */
 /**********************************/
     // ref: https://jsfiddle.net/ianclark001/aShQL/
-    function scrollToAnchor(href) {
-        href = typeof(href) == "string" ? href : $(this).attr("href");
+    function scrollToAnchor(hrefIn: string|MouseEvent) {
+        var href = typeof(hrefIn) == "string" ? hrefIn : document.querySelector(this).attr("href");
         // fix for chinese and cyrillic character hash and href values
         // ref: https://gomakethings.com/handling-chinese-and-cyrillic-character-hash-and-href-values-in-javascript/
         var hash;
@@ -96,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
     scrollToAnchor(window.location.hash);
     // Intercept all anchor clicks
     (document.querySelectorAll("a[href*=\\#]:not([href=\\#])") || []).forEach((el) => {
-        el.addEventListener('click', scrollToAnchor);
+        (el as HTMLLinkElement).addEventListener('click', scrollToAnchor);
     });
 
 

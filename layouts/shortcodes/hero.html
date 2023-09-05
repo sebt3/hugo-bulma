@@ -3,6 +3,8 @@
 {{ $size := $shortcode.Get "size" | default "" }}
 {{ $color := $shortcode.Get "color" | default "" }}
 {{ $isGradient := $shortcode.Get "isGradient" | default false }}
+{{ $isNoisy    := $shortcode.Get "isNoisy" | default false }}
+{{ $isMain     := $shortcode.Get "isMain" | default false }}
 {{ $isCentered := $shortcode.Get "isCentered" | default false }}
 
 {{ $class := "hero" }}
@@ -26,11 +28,16 @@
         {{ partial "functions/error.html" (dict "context" $shortcode "message" $message) }}
     {{ else }}
         {{ $class = printf "%s is-%s" $class $color }}
-
-        {{ if $isGradient }}
-            {{ $class = printf "%s is-bold" $class }}
-        {{ end }}
     {{ end }}
+{{ end }}
+{{ if $isGradient }}
+    {{ $class = printf "%s is-bold" $class }}
+{{ end }}
+{{ if $isNoisy }}
+    {{ $class = printf "%s is-noisy" $class }}
+{{ end }}
+{{ if $isMain }}
+    {{ $class = printf "%s is-main" $class }}
 {{ end }}
 
 {{ if eq $shortcode.Inner "" }}

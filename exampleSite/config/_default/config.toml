@@ -16,7 +16,7 @@ googleAnalytics = ""
 disableHugoGeneratorInject =  true
 
 # Default language to use.
-defaultContentLanguage = "fr"
+defaultContentLanguage = "en"
 
 # Render the default content language in subdir, e.g. /en/.
 defaultContentLanguageInSubdir = false

@@ -115,7 +115,7 @@
 {{ $localCSSTarget := "styles/all.css" }}
 
 <!-- prepared for more theme styles future -->
-{{ $themeStyles := slice "styles/main.scss" }}
+{{ $themeStyles := slice "styles/main.sass" }}
 
 {{ range $path := $themeStyles }}
     {{ $css := resources.Get $path  | resources.ExecuteAsTemplate $path $page | resources.ToCSS | resources.PostCSS }}
